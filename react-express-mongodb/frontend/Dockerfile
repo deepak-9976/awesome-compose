@@ -19,6 +19,8 @@ COPY . /usr/src/app
 
 # Expose the port the app runs in
 EXPOSE 3000
-
+HEALTHCHECK --interval=5m --timeout=3s \
+  CMD curl -f http://localhost:3000/ || exit 1
+  
 # Serve the app
 CMD ["npm", "start"]
