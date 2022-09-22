@@ -2,6 +2,7 @@ services:
   frontend:
     build:
       context: frontend
+      dockerfile: Dockerfile-multi
       target: development
     ports:
       - 3000:3000
@@ -21,6 +22,7 @@ services:
     restart: always
     build:
       context: backend
+      dockerfile: Dockerfile-multi
       target: development
     volumes:
       - ./backend:/usr/src/app
